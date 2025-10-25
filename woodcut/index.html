@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Woodcut Gallery</title>
+    <style>
+        body { 
+            background-color: #000; 
+            color: #fff; 
+            font-family: sans-serif;
+            margin: 0; /* Removes default browser spacing */
+            padding: 20px; /* Adds some space around the content */
+        }
+        h1 { 
+            text-align: center; 
+        }
+
+        /* --- New Navigation Styles --- */
+        nav {
+            width: 100%;
+            text-align: center; /* Centers the nav block */
+            margin-bottom: 30px; /* Adds space below the nav */
+        }
+        nav ul {
+            list-style-type: none; /* Removes list bullets */
+            margin: 0;
+            padding: 0;
+            display: inline-block; /* Helps center the list */
+        }
+        nav li {
+            display: inline-block; /* Makes the links horizontal */
+        }
+        nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+        
+        /* Change background on hover/focus */
+        nav a:hover, nav a:focus {
+            background-color: #333; /* Dark gray background on hover */
+            border-radius: 4px; /* Adds slightly rounded corners */
+        }
+        
+        /* Style for the *current* page link */
+        nav a.active {
+            color: #888; /* Grays out the active link */
+            cursor: default;
+        }
+        /* --- End Navigation Styles --- */
+
+        .gallery { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 15px; 
+            /* Added for better vertical alignment if images are different heights */
+            align-items: flex-start; 
+        }
+        .gallery img { 
+            /* --- THIS IS THE FIX --- */
+            max-width: 300px; /* Was 'width: 300px;' */
+            height: auto; 
+            border: 2px solid #fff; 
+        }
+        
+        /* --- New Footer Style --- */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Woodcut Gallery</h1>
+
+    <nav>
+        <ul>
+            <li><a href="http://normanfolgerdellert.org/">Home</a></li>
+            <li><a href="http://normanfolgerdellert.org/bio.html">Bio</a></li>
+            <li><a href="http://normanfolgerdellert.org/woodcuts/index.html" class="active">Woodcuts</a></li>
+            <li><a href="http://normanfolgerdellert.org/penandink/index.html">Pen and Ink</a></li>
+            <li><a href="http://normanfolgerdellert.org/watercolor/index.html">Watercolor</a></li>
+        </ul>
+    </nav>
+
+    <div class="gallery">
+        
+        <img src="http://normanfolgerdellert.org/woodcut/images/3.jpg" alt="Woodcut 3">
+        <img src="http://normanfolgerdellert.org/woodcut/images/4.jpg" alt="Woodcut 4">
+        <img src="http://normanfolgerdellert.org/woodcut/images/6.jpg" alt="Woodcut 6">
+        <img src="http://normanfolgerdellert.org/woodcut/images/7.jpg" alt="Woodcut 7">
+        <img src="http://normanfolgerdellert.org/woodcut/images/8.jpg" alt="Woodcut 8">
+        <img src="http://normanfolgerdellert.org/woodcut/images/9.jpg" alt="Woodcut 9">
+        <img src="http://normanfolgerdellert.org/woodcut/images/10.jpg" alt="Woodcut 10">
+        <img src="http://normanfolgerdellert.org/woodcut/images/11.jpg" alt="Woodcut 11">
+        <img src="http://normanfolgerdellert.org/woodcut/images/12.jpg" alt="Woodcut 12">
+        <img src="http://normanfolgerdellert.org/woodcut/images/14.jpg" alt="Woodcut 14">
+        <img src="http://normanfolgerdellert.org/woodcut/images/15.jpg" alt="Woodcut 15">
+        <img src="http://normanfolgerdellert.org/woodcut/images/16.jpg" alt="Woodcut 16">
+        <img src="http://normanfolgerdellert.org/woodcut/images/17.jpg" alt="Woodcut 17">
+        <img src="http://normanfolgerdellert.org/woodcut/images/18.jpg" alt="Woodcut 18">
+        <img src="http://normanfolgerdellert.org/woodcut/images/19.jpg" alt="Woodcut 19">
+        <img src="http://normanfolgerdellert.org/woodcut/images/20.jpg" alt="Woodcut 20">
+        <img src="http://normanfolgerdellert.org/woodcut/images/21.jpg" alt="Woodcut 21">
+        <img src="http://normanfolgerdellert.org/woodcut/images/24.jpg" alt="Woodcut 24">
+        <img src="http://normanfolgerdellert.org/woodcut/images/25.jpg" alt="Woodcut 25">
+        <img src="http://normanfolgerdellert.org/woodcut/images/26.jpg" alt="Woodcut 26">
+		        <img src="http://normanfolgerdellert.org/woodcut/images/5.jpg" alt="Woodcut 5">
+		  <img src="http://normanfolgerdellert.org/woodcut/images/13.jpg" alt="Woodcut 13">
+		<img src="http://normanfolgerdellert.org/woodcut/images/2.jpg" alt="Woodcut 2">
+		        <img src="http://normanfolgerdellert.org/woodcut/images/22.jpg" alt="Woodcut 22">
+        <img src="http://normanfolgerdellert.org/woodcut/images/23.jpg" alt="Woodcut 23">
+        <img src="
