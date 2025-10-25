@@ -1,66 +1,157 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title>Norman Folger Dellert</title>
-  <link rel="stylesheet" href="default.css" type="text/css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norman Folger Dellert</title>
+    <style>
+        /* A basic 'reset' for consistency */
+        html {
+            box-sizing: border-box;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        /* 1. MOBILE-FIRST STYLES (How it looks on a phone) */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #000; /* Changed to black */
+            color: #fff; /* Changed text color to white for contrast */
+            text-align: center; 
+        }
+
+        /* Make all images flexible so they don't overflow the screen */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* General container for all main content */
+        .main-container {
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Style for the logo, bio, and gallery sections */
+        .content-section {
+            margin-bottom: 40px; 
+        }
+        
+        .bio-image {
+            border: 1px solid #777; /* Adjusted border color for black background */
+            padding: 4px;
+            border-radius: 4px;
+        }
+
+        /* Styling for the navigation links (Woodcut, Pen/Ink, etc.) */
+        .gallery-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .gallery-nav li {
+            margin-bottom: 25px;
+        }
+
+        /* Styling for text links below images */
+        .plain-link {
+            display: block;
+            margin-top: 8px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #ccc; /* Adjusted link color for black background */
+            font-weight: bold;
+        }
+        .plain-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer styling */
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999; /* Adjusted footer text color for black background */
+        }
+
+        /* 2. DESKTOP STYLES */
+        @media (min-width: 768px) {
+            .main-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 40px;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 40px;
+            }
+
+            .content-section {
+                margin-bottom: 0;
+                flex-grow: 0;
+                flex-shrink: 1;
+            }
+
+            .logo-area {
+                flex-basis: 250px;
+            }
+            .bio-area {
+                flex-basis: 300px;
+            }
+            .gallery-area {
+                flex-basis: 250px;
+            }
+        }
+
+    </style>
 </head>
 <body>
-  <table cellpadding="0" cellspacing="0" border=0" width="100%">
-    <tr>
-      <td align="center">
-  <table cellpadding="0" cellspacing="0" border="0">
-    <tr>
-      <td>
-        <img style="padding-right: 40px;" src="images/cwtext.png" alt=""/>
-      </td>
-      <td align="center">
-        <a href="bio.html"><img src="images/nfd.jpg" alt="" border="0"/></a>
-        <a class="plainlink" href="bio.html">Artist Biography</a>
-      </td>
-<td>
-        <table style="font-size: 16px;" cellpadding="1" cellspacing="0" border="0">
-<tr>
-            <td class="mainpagelinkcell" align="center">
-        <a href="woodcut/index.html"><img src="images/woodcut_aoi.png" alt="" border="0"/></a>
-            </td>
-</tr>
-<tr>
-            <td align="center">
-<a class="plainlink" href="woodcut/index.html">Woodcut</a>
-            </td>
-</tr>
-          <tr>
-            <td class="mainpagelinkcell" align="center">
-        <a href="penandink/index.html"><img src="images/penandink_aoi.png" alt="" border="0"/></a>
-            </td>
-</tr>
-          <tr>
-            <td align="center">
-<a class="plainlink" href="penandink/index.html">Pen and Ink</a>
-            </td>
-</tr>
-<tr>
-            <td class="mainpagelinkcell" align="center">
-        <a href="watercolor/index.html"><img src="images/watercolor_aoi.png" alt="" border="0"/></a>
-            </td>
-          </tr>
-<tr>
-            <td align="center">
-<a class="plainlink" href="watercolor/index.html">Watercolor</a>
-            </td>
-          </tr>
-        </table>
-</td>
-    </tr>
-  </table>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" style="padding-top: 40px;"><span style="font-size: 10px;">All images copyright &copy; the Dellert/Jones estate. All rights reserved.</span></td>
-    </tr>
-  </table>
+
+    <div class="main-container">
+
+        <div class="content-section logo-area">
+            <img src="images/cwtext.png" alt="Calligraphy by CW"/>
+        </div>
+
+        <div class="content-section bio-area">
+            <a href="bio.html">
+                <img class="bio-image" src="images/nfd.jpg" alt="Photo of Norman Folger Dellert"/>
+                <span class="plain-link">Artist Biography</span>
+            </a>
+        </div>
+        
+        <nav class="content-section gallery-area">
+            <ul class="gallery-nav">
+                <li>
+                    <a href="woodcut/index.html">
+                        <img src="images/woodcut_aoi.png" alt="Woodcut example"/>
+                        <span class="plain-link">Woodcut</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="penandink/index.html">
+                        <img src="images/penandink_aoi.png" alt="Pen and Ink example"/>
+                        <span class="plain-link">Pen and Ink</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="watercolor/index.html">
+                        <img src="images/watercolor_aoi.png" alt="Watercolor example"/>
+                        <span class="plain-link">Watercolor</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <footer>
+        <p>All images copyright &copy; the Dellert/Jones estate. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
-
