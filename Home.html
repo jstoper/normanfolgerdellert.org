@@ -1,37 +1,157 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norman Folger Dellert</title>
+    <style>
+        /* A basic 'reset' for consistency */
+        html {
+            box-sizing: border-box;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
 
-    <head>
-        <title>This site is under development</title>
-        <style>
-            #ad_frame{ height:800px; width:100%; }
-            body{ margin:0; border: 0; padding: 0; }
-        </style>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script type="text/javascript" language="JavaScript">
-            var url = 'http://www.iyfipgun.com/?dn='
-                + document.domain + '&pid=9POL6F2H4';
+        /* 1. MOBILE-FIRST STYLES (How it looks on a phone) */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #000; /* Changed to black */
+            color: #fff; /* Changed text color to white for contrast */
+            text-align: center; 
+        }
 
-            $(document).ready(function() {
-                $('#ad_frame').attr('src', url);
-            });
-        </script>
-    </head>
-    <body>
-        <iframe id="ad_frame" src="http://www.iyfipgun.com/"
-            frameborder="0" scrolling="no">
+        /* Make all images flexible so they don't overflow the screen */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
 
-            <div id="container">
-                <h1>This site is under development</h1>
-                <p>This page indicates the webmaster has not uploaded a website
-                    to the server.
-                </p>
-                <p>For information on how to build or upload a site, please visit
-                    your web hosting company's site.
-                </p>
-            </div>
+        /* General container for all main content */
+        .main-container {
+            width: 100%;
+            padding: 20px;
+        }
 
-        </iframe>
-    </body>
+        /* Style for the logo, bio, and gallery sections */
+        .content-section {
+            margin-bottom: 40px; 
+        }
+        
+        .bio-image {
+            border: 1px solid #777; /* Adjusted border color for black background */
+            padding: 4px;
+            border-radius: 4px;
+        }
 
+        /* Styling for the navigation links (Woodcut, Pen/Ink, etc.) */
+        .gallery-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .gallery-nav li {
+            margin-bottom: 25px;
+        }
+
+        /* Styling for text links below images */
+        .plain-link {
+            display: block;
+            margin-top: 8px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #ccc; /* Adjusted link color for black background */
+            font-weight: bold;
+        }
+        .plain-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer styling */
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999; /* Adjusted footer text color for black background */
+        }
+
+        /* 2. DESKTOP STYLES */
+        @media (min-width: 768px) {
+            .main-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 40px;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 40px;
+            }
+
+            .content-section {
+                margin-bottom: 0;
+                flex-grow: 0;
+                flex-shrink: 1;
+            }
+
+            .logo-area {
+                flex-basis: 250px;
+            }
+            .bio-area {
+                flex-basis: 300px;
+            }
+            .gallery-area {
+                flex-basis: 250px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <div class="content-section logo-area">
+            <img src="images/cwtext.png" alt="Calligraphy by CW"/>
+        </div>
+
+        <div class="content-section bio-area">
+            <a href="bio.html">
+                <img class="bio-image" src="images/nfd.jpg" alt="Photo of Norman Folger Dellert"/>
+                <span class="plain-link">Artist Biography</span>
+            </a>
+        </div>
+        
+        <nav class="content-section gallery-area">
+            <ul class="gallery-nav">
+                <li>
+                    <a href="woodcut/index.html">
+                        <img src="images/woodcut_aoi.png" alt="Woodcut example"/>
+                        <span class="plain-link">Woodcut</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="penandink/index.html">
+                        <img src="images/penandink_aoi.png" alt="Pen and Ink example"/>
+                        <span class="plain-link">Pen and Ink</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="watercolor/index.html">
+                        <img src="images/watercolor_aoi.png" alt="Watercolor example"/>
+                        <span class="plain-link">Watercolor</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <footer>
+        <p>All images copyright &copy; the Dellert/Jones estate. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>
