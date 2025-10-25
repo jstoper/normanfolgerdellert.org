@@ -1,16 +1,94 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title>Norman Folger Dellert</title>
-  <link rel="stylesheet" href="default.css" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Pen and Ink Gallery</title>
+    <style>
+        body { 
+            background-color: #000; 
+            color: #fff; 
+            font-family: sans-serif;
+            margin: 0; /* Removes default browser spacing */
+            padding: 20px; /* Adds some space around the content */
+        }
+        h1 { 
+            text-align: center; 
+        }
+
+        /* --- New Navigation Styles --- */
+        nav {
+            width: 100%;
+            text-align: center; /* Centers the nav block */
+            margin-bottom: 30px; /* Adds space below the nav */
+        }
+        nav ul {
+            list-style-type: none; /* Removes list bullets */
+            margin: 0;
+            padding: 0;
+            display: inline-block; /* Helps center the list */
+        }
+        nav li {
+            display: inline-block; /* Makes the links horizontal */
+        }
+        nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+        
+        /* Change background on hover/focus */
+        nav a:hover, nav a:focus {
+            background-color: #333; /* Dark gray background on hover */
+            border-radius: 4px; /* Adds slightly rounded corners */
+        }
+        
+        /* Style for the *current* page link */
+        nav a.active {
+            color: #888; /* Grays out the active link */
+            cursor: default;
+        }
+        /* --- End Navigation Styles --- */
+
+        .gallery { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 15px; 
+        }
+        .gallery img { 
+            max-width: 300px; /* Was 'width: 300px;' */
+            height: auto; 
+            border: 2px solid #fff; 
+        }
+        
+        /* --- New Footer Style --- */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
-  <div style="margin: 50px 20% 0 20%">
+
     <h1>Artist Biography</h1>
-    <p>
-Norman Folger Dellert was born in Pittsfield, Massachusetts in 1913.  His art spanned woodcuts, watercolor, and pen and ink, among other media.
+
+    <nav>
+        <ul>
+            <li><a href="http://normanfolgerdellert.org/">Home</a></li>
+            <li><a href="http://normanfolgerdellert.org/bio.html" class="active">Bio</a></li>
+            <li><a href="http://normanfolgerdellert.org/woodcuts/index.html">Woodcuts</a></li>
+            <li><a href="http://normanfolgerdellert.org/penandink/index.html">Pen and Ink</a></li>
+            <li><a href="http://normanfolgerdellert.org/watercolor/index.html">Watercolor</a></li>
+        </ul>
+    </nav>
+
+    <div>
+     Norman Folger Dellert was born in Pittsfield, Massachusetts in 1913.  His art spanned woodcuts, watercolor, and pen and ink, among other media.
 </p>
 <p>
 At the age of 12, Dellert began his art career with pen-and-ink drawings. In 1961, after about 30 years as a watercolorist, he turned again to black and white, this time in woodcuts.
@@ -28,10 +106,11 @@ Dellert generally started with an on-the-spot rough sketch, which he then refine
 </p><p>
 Dellert was a loving husband to Helen Wood Dellert and father to Kathleen Dellert Jones. 
 </p>
-<p style="text-align: center;">
-  <a href="index.html">Home</a>
-</p>
-  </div>
+    </div>
+
+    <footer>
+        All images copyright © the Dellert/Jones estate. All rights reserved.
+    </footer>
+
 </body>
 </html>
-
