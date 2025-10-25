@@ -1,18 +1,94 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Watercolor Gallery</title>
     <style>
-        body { background-color: #000; color: #fff; font-family: sans-serif; }
-        .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        .gallery img { width: 300px; height: auto; border: 2px solid #fff; }
-        h1 { text-align: center; }
+        body { 
+            background-color: #000; 
+            color: #fff; 
+            font-family: sans-serif;
+            margin: 0; /* Removes default browser spacing */
+            padding: 20px; /* Adds some space around the content */
+        }
+        h1 { 
+            text-align: center; 
+        }
+
+        /* --- New Navigation Styles --- */
+        nav {
+            width: 100%;
+            text-align: center; /* Centers the nav block */
+            margin-bottom: 30px; /* Adds space below the nav */
+        }
+        nav ul {
+            list-style-type: none; /* Removes list bullets */
+            margin: 0;
+            padding: 0;
+            display: inline-block; /* Helps center the list */
+        }
+        nav li {
+            display: inline-block; /* Makes the links horizontal */
+        }
+        nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+        
+        /* Change background on hover/focus */
+        nav a:hover, nav a:focus {
+            background-color: #333; /* Dark gray background on hover */
+            border-radius: 4px; /* Adds slightly rounded corners */
+        }
+        
+        /* Style for the *current* page link */
+        nav a.active {
+            color: #888; /* Grays out the active link */
+            cursor: default;
+        }
+        /* --- End Navigation Styles --- */
+
+        .gallery { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 15px; 
+        }
+        .gallery img { 
+            width: 300px; 
+            height: auto; 
+            border: 2px solid #fff; 
+        }
+        
+        /* --- New Footer Style --- */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #888;
+        }
     </style>
 </head>
 <body>
+
     <h1>Watercolor Gallery</h1>
-	<a href="http://normanfolgerdellert.org/">"Home"</a>> | Bio | Woodcuts | Pen and Ink
+
+    <nav>
+        <ul>
+            <li><a href="http://normanfolgerdellert.org/">Home</a></li>
+            <li><a href="http://normanfolgerdellert.org/bio.html">Bio</a></li>
+            <li><a href="http://normanfolgerdellert.org/woodcuts/index.html">Woodcuts</a></li>
+            <li><a href="http://normanfolgerdellert.org/penandink/index.html">Pen and Ink</a></li>
+            <li><a href="http://normanfolgerdellert.org/watercolor/index.html" class="active">Watercolor</a></li>
+        </ul>
+    </nav>
+
     <div class="gallery">
         <img src="http://normanfolgerdellert.org/watercolor/images/1.jpg" alt="Description of painting 1">
         <img src="http://normanfolgerdellert.org/watercolor/images/2.jpg" alt="Description of painting 2">
@@ -24,7 +100,11 @@
 		<img src="http://normanfolgerdellert.org/watercolor/images/9.jpg" alt="Description of painting 9">
 		<img src="http://normanfolgerdellert.org/watercolor/images/10.jpg" alt="Description of painting 10">
 		<img src="http://normanfolgerdellert.org/watercolor/images/11.jpg" alt="Description of painting 11">
-		All images copyright © the Dellert/Jones estate. All rights reserved.
-        </div>
+    </div>
+
+    <footer>
+        All images copyright © the Dellert/Jones estate. All rights reserved.
+    </footer>
+
 </body>
 </html>
