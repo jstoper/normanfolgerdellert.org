@@ -61,11 +61,21 @@
             align-items: flex-start; 
         }
         .gallery img { 
-            /* --- THIS IS THE FIX --- */
-            max-width: 300px; /* Was 'width: 300px;' */
+            mwidth: 300px; 
             height: auto; 
-            border: 2px solid #fff; 
-        }
+			width: 100%; /* Make it fill its container (for CSS Grid later) */
+    display: block; /* Removes any bottom spacing */
+    border: none; /* Remove the old border */
+    border-radius: 4px; /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* A subtle shadow */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+}
+
+.gallery img:hover {
+    transform: scale(1.03); /* Slightly enlarge on hover */
+    opacity: 0.8; /* Fade slightly */
+    cursor: pointer; /* Show it's clickable */
+}
         
         /* --- New Footer Style --- */
         footer {
