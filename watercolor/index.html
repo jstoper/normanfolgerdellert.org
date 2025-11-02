@@ -1,215 +1,239 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <title>Watercolor Gallery</title>
-
     <style>
-
         body { 
-
             background-color: #000; 
-
             color: #fff; 
-
             font-family: sans-serif;
-
             margin: 0; /* Removes default browser spacing */
-
             padding: 20px; /* Adds some space around the content */
-
         }
-
         h1 { 
-
             text-align: center; 
-
         }
 
-
-
-        /* --- New Navigation Styles --- */
-
+        /* --- Navigation Styles --- */
         nav {
-
             width: 100%;
-
             text-align: center; /* Centers the nav block */
-
             margin-bottom: 30px; /* Adds space below the nav */
-
         }
-
         nav ul {
-
             list-style-type: none; /* Removes list bullets */
-
             margin: 0;
-
             padding: 0;
-
             display: inline-block; /* Helps center the list */
-
         }
-
         nav li {
-
             display: inline-block; /* Makes the links horizontal */
-
         }
-
         nav a {
-
             display: block;
-
             color: #fff;
-
             text-decoration: none;
-
             padding: 10px 15px;
-
             font-weight: bold;
-
             transition: background-color 0.3s ease; /* Smooth hover effect */
-
         }
-
         
-
         /* Change background on hover/focus */
-
         nav a:hover, nav a:focus {
-
             background-color: #333; /* Dark gray background on hover */
-
             border-radius: 4px; /* Adds slightly rounded corners */
-
         }
-
         
-
         /* Style for the *current* page link */
-
         nav a.active {
-
             color: #888; /* Grays out the active link */
-
             cursor: default;
-
         }
-
         /* --- End Navigation Styles --- */
 
-
-
         .gallery { 
-
             display: flex; 
-
             flex-wrap: wrap; 
-
             justify-content: center; 
-
             gap: 15px; 
-
         }
-
-        .gallery img { 
-
-            max-width: 300px; /* Was 'width: 300px;' */
-
-            height: auto; 
-
-            border: 2px solid #fff; 
-
-        }
-
         
+        /* --- UPDATED THUMBNAIL STYLE --- */
+        .gallery img { 
+            max-width: 300px; /* Kept your max-width */
+            height: auto; 
+            border: 2px solid #fff; /* Kept your white border */
+            
+            /* Added from previous file */
+            display: block;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            cursor: pointer; /* Makes it look clickable */
+        }
 
-        /* --- New Footer Style --- */
-
+        /* --- NEW HOVER STYLE --- */
+        .gallery img:hover {
+            transform: scale(1.03);
+            opacity: 0.8;
+        }
+        
+        /* --- Footer Style --- */
         footer {
-
             text-align: center;
-
             margin-top: 30px;
-
             font-size: 0.9em;
-
             color: #888;
+        }
 
+        /* * ---------------------------------
+         * --- NEW MODAL (LIGHTBOX) STYLES ---
+         * ---------------------------------
+        */
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; 
+            z-index: 1000; 
+            padding-top: 60px; /* Space from top */
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        /* Modal Content (The Image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: auto;  /* Respect original width */
+            height: auto; /* Respect original height */
+            /* Scale down images that are too big for the screen */
+            max-width: 90vw;
+            max-height: 85vh;
+        }
+
+        /* Caption of Modal Image (from alt text) */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+        }
+
+        /* Add Animation - Zoom in */
+        .modal-content, #caption {
+            animation-name: zoom;
+            animation-duration: 0.5s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0.1)}
+            to {transform: scale(1)}
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
         }
 
     </style>
-
 </head>
-
 <body>
-
-
 
     <h1>Watercolor Gallery</h1>
 
-
-
     <nav>
-
         <ul>
-
             <li><a href="http://normanfolgerdellert.org/">Home</a></li>
-
             <li><a href="http://normanfolgerdellert.org/bio.html">Bio</a></li>
-
             <li><a href="http://normanfolgerdellert.org/woodcut/index.html">Woodcuts</a></li>
-
             <li><a href="http://normanfolgerdellert.org/penandink/index.html">Pen and Ink</a></li>
-
             <li><a href="http://normanfolgerdellert.org/watercolor/index.html" class="active">Watercolor</a></li>
-
         </ul>
-
     </nav>
 
-
-
     <div class="gallery">
-
         <img src="http://normanfolgerdellert.org/watercolor/images/1.jpg" alt="Description of painting 1">
-
         <img src="http://normanfolgerdellert.org/watercolor/images/2.jpg" alt="Description of painting 2">
+		<img src="http://normanfolgerdellert.org/watercolor/images/3.jpg" alt="Description of painting 3">
+		<img src="http://normanfolgerdellert.org/watercolor/images/4.jpg" alt="Description of painting 4">		
+		<img src="http://normanfolgerdellert.org/watercolor/images/5.jpg" alt="Description of painting 5">
+		<img src="http://normanfolgerdellert.org/watercolor/images/6.jpg" alt="Description of painting 6">
+		<img src="http://normanfolgerdellert.org/watercolor/images/7.jpg" alt="Description of painting 7">
+		<img src="http://normanfolgerdellert.org/watercolor/images/9.jpg" alt="Description of painting 9">
+		<img src="http://normanfolgerdellert.org/watercolor/images/10.jpg" alt="Description of painting 10">
+		<img src="http://normanfolgerdellert.org/watercolor/images/11.jpg" alt="Description of painting 11">
+    </div>
 
-<img src="http://normanfolgerdellert.org/watercolor/images/3.jpg" alt="Description of painting 3">
+    <footer>
+        All images copyright © the Dellert/Jones estate. All rights reserved.
+    </footer>
 
-<img src="http://normanfolgerdellert.org/watercolor/images/4.jpg" alt="Description of painting 4">
-
-<img src="http://normanfolgerdellert.org/watercolor/images/5.jpg" alt="Description of painting 5">
-
-<img src="http://normanfolgerdellert.org/watercolor/images/6.jpg" alt="Description of painting 6">
-
-<img src="http://normanfolgerdellert.org/watercolor/images/7.jpg" alt="Description of painting 7">
-
-<img src="http://normanfolgerdellert.org/watercolor/images/9.jpg" alt="Description of painting 9">
-
-<img src="http://normanfolgerdellert.org/watercolor/images/10.jpg" alt="Description of painting 10">
-
-<img src="http://normanfolgerdellert.org/watercolor/images/11.jpg" alt="Description of painting 11">
-
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        
+        <img class="modal-content" id="img01">
+        
+        <div id="caption"></div>
     </div>
 
 
+    <script>
+        // Get the modal element
+        var modal = document.getElementById("myModal");
 
-    <footer>
+        // Get the modal image and caption elements
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
 
-        All images copyright © the Dellert/Jones estate. All rights reserved.
+        // Get all images in the gallery
+        var images = document.querySelectorAll(".gallery img");
+        
+        // Loop over each image and add a click event
+        images.forEach(function(img) {
+            img.onclick = function() {
+                modal.style.display = "block"; // Show the modal
+                modalImg.src = this.src;       
+                captionText.innerHTML = this.alt; 
+            }
+        });
 
-    </footer>
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
 
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
 
+        // When the user clicks on the modal background (not the image), close it
+        modal.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
-
 </html>
