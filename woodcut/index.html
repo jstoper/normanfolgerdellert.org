@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Woodcut Gallery</title>
-    <style>
+<style>
         body { 
             background-color: #000; 
             color: #fff; 
             font-family: sans-serif;
-            margin: 0; /* Removes default browser spacing */
-            padding: 20px; /* Adds some space around the content */
+            margin: 0;
+            padding: 20px;
         }
         h1 { 
             text-align: center; 
@@ -18,17 +13,17 @@
         /* --- Navigation Styles --- */
         nav {
             width: 100%;
-            text-align: center; /* Centers the nav block */
-            margin-bottom: 30px; /* Adds space below the nav */
+            text-align: center;
+            margin-bottom: 30px;
         }
         nav ul {
-            list-style-type: none; /* Removes list bullets */
+            list-style-type: none;
             margin: 0;
             padding: 0;
-            display: inline-block; /* Helps center the list */
+            display: inline-block;
         }
         nav li {
-            display: inline-block; /* Makes the links horizontal */
+            display: inline-block;
         }
         nav a {
             display: block;
@@ -36,18 +31,14 @@
             text-decoration: none;
             padding: 10px 15px;
             font-weight: bold;
-            transition: background-color 0.3s ease; /* Smooth hover effect */
+            transition: background-color 0.3s ease;
         }
-        
-        /* Change background on hover/focus */
         nav a:hover, nav a:focus {
-            background-color: #333; /* Dark gray background on hover */
-            border-radius: 4px; /* Adds slightly rounded corners */
+            background-color: #333;
+            border-radius: 4px;
         }
-        
-        /* Style for the *current* page link */
         nav a.active {
-            color: #888; /* Grays out the active link */
+            color: #888;
             cursor: default;
         }
         /* --- End Navigation Styles --- */
@@ -62,19 +53,19 @@
         
         /* --- THUMBNAIL IMAGE STYLE --- */
         .gallery img { 
-            width: 300px;  /* Explicitly set thumbnail width */
-            height: auto; /* Maintain aspect ratio */
+            width: 300px;
+            height: auto;
             display: block; 
             border: none; 
             border-radius: 4px; 
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
             transition: transform 0.3s ease, opacity 0.3s ease; 
-            cursor: pointer; /* Show it's clickable */
+            cursor: pointer;
         }
 
         .gallery img:hover {
-            transform: scale(1.03); /* Slightly enlarge on hover */
-            opacity: 0.8; /* Fade slightly */
+            transform: scale(1.03);
+            opacity: 0.8;
         }
         
         /* --- Footer Style --- */
@@ -87,57 +78,50 @@
 
         /* * ---------------------------------
          * --- MODAL (LIGHTBOX) STYLES ---
-         * --- IMPORTANT CHANGES BELOW ---
+         * --- Corrected Version ---
          * ---------------------------------
         */
 
         /* The Modal (background) */
         .modal {
             display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1000; /* Sit on top of everything */
-            /* Removed padding-top here to allow image to center vertically */
+            position: fixed; 
+            z-index: 1000; 
+            padding-top: 60px; /* Space from top to start of modal box */
             left: 0;
             top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed for large images */
-            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-            display: flex; /* Use flexbox for easy centering */
-            align-items: center; /* Center vertically */
-            justify-content: center; /* Center horizontally */
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.9);
         }
 
         /* Modal Content (The Image) */
         .modal-content {
-            margin: auto; /* Still good for older browsers */
+            margin: auto;
             display: block;
-            width: auto;  /* Allow image to take its natural width */
-            height: auto; /* Allow image to take its natural height */
-            /*
-             * KEY CHANGE: Removed max-width and max-height
-             * Instead, use object-fit: contain and optionally set an explicit
-             * maximum size if the original image is *too* big for the screen.
+            width: auto;  /* Respect original width */
+            height: auto; /* Respect original height */
+            
+            /* * This is the fix to show original dimensions:
+             * We set a max-width and max-height to the *viewport size*.
+             * This means small images show at 100% size, and huge
+             * images scale *down* to fit the screen, which is
+             * the desired behavior.
             */
-            max-width: 100vw; /* Ensure it doesn't exceed viewport width */
-            max-height: 100vh; /* Ensure it doesn't exceed viewport height */
-            object-fit: contain; /* Scale down if necessary, without cropping */
-            box-shadow: 0 4px 20px rgba(0,0,0,0.7); /* Stronger shadow for modal image */
+            max-width: 90vw; /* 90% of viewport width */
+            max-height: 85vh; /* 85% of viewport height */
         }
 
         /* Caption of Modal Image (from alt text) */
         #caption {
-            position: absolute; /* Position relative to the modal */
-            bottom: 15px; /* Place at the bottom */
-            left: 50%;
-            transform: translateX(-50%); /* Center horizontally */
+            margin: auto;
+            display: block;
             width: 80%;
             max-width: 700px;
             text-align: center;
             color: #ccc;
             padding: 10px 0;
-            background-color: rgba(0,0,0,0.5); /* Slightly darker background for readability */
-            border-radius: 4px;
         }
 
         /* Add Animation - Zoom in */
@@ -170,95 +154,3 @@
         }
 
     </style>
-</head>
-<body>
-
-    <h1>Woodcut Gallery</h1>
-
-    <nav>
-        <ul>
-            <li><a href="http://normanfolgerdellert.org/">Home</a></li>
-            <li><a href="http://normanfolgerdellert.org/bio.html">Bio</a></li>
-            <li><a href="http://normanfolgerdellert.org/woodcut/index.html" class="active">Woodcuts</a></li>
-            <li><a href="http://normanfolgerdellert.org/penandink/index.html">Pen and Ink</a></li>
-            <li><a href="http://normanfolgerdellert.org/watercolor/index.html">Watercolor</a></li>
-        </ul>
-    </nav>
-
-    <div class="gallery">
-        
-        <img src="http://normanfolgerdellert.org/woodcut/images/3.jpg" alt="Woodcut 3">
-        <img src="http://normanfolgerdellert.org/woodcut/images/4.jpg" alt="Woodcut 4">
-        <img src="http://normanfolgerdellert.org/woodcut/images/6.jpg" alt="Woodcut 6">
-        <img src="http://normanfolgerdellert.org/woodcut/images/7.jpg" alt="Woodcut 7">
-        <img src="http://normanfolgerdellert.org/woodcut/images/8.jpg" alt="Woodcut 8">
-        <img src="http://normanfolgerdellert.org/woodcut/images/9.jpg" alt="Woodcut 9">
-        <img src="http://normanfolgerdellert.org/woodcut/images/10.jpg" alt="Woodcut 10">
-        <img src="http://normanfolgerdellert.org/woodcut/images/11.jpg" alt="Woodcut 11">
-        <img src="http://normanfolgerdellert.org/woodcut/images/12.jpg" alt="Woodcut 12">
-        <img src="http://normanfolgerdellert.org/woodcut/images/14.jpg" alt="Woodcut 14">
-        <img src="http://normanfolgerdellert.org/woodcut/images/15.jpg" alt="Woodcut 15">
-        <img src="http://normanfolgerdellert.org/woodcut/images/16.jpg" alt="Woodcut 16">
-        <img src="http://normanfolgerdellert.org/woodcut/images/17.jpg" alt="Woodcut 17">
-        <img src="http://normanfolgerdellert.org/woodcut/images/18.jpg" alt="Woodcut 18">
-        <img src="http://normanfolgerdellert.org/woodcut/images/19.jpg" alt="Woodcut 19">
-        <img src="http://normanfolgerdellert.org/woodcut/images/20.jpg" alt="Woodcut 20">
-        <img src="http://normanfolgerdellert.org/woodcut/images/21.jpg" alt="Woodcut 21">
-        <img src="http://normanfolgerdellert.org/woodcut/images/24.jpg" alt="Woodcut 24">
-        <img src="http://normanfolgerdellert.org/woodcut/images/25.jpg" alt="Woodcut 25">
-        <img src="http://normanfolgerdellert.org/woodcut/images/26.jpg" alt="Woodcut 26">
-		<img src="http://normanfolgerdellert.org/woodcut/images/5.jpg" alt="Woodcut 5">
-		<img src="http://normanfolgerdellert.org/woodcut/images/13.jpg" alt="Woodcut 13">
-		<img src="http://normanfolgerdellert.org/woodcut/images/2.jpg" alt="Woodcut 2">
-		<img src="http://normanfolgerdellert.org/woodcut/images/22.jpg" alt="Woodcut 22">
-        <img src="http://normanfolgerdellert.org/woodcut/images/23.jpg" alt="Woodcut 23">
-
-    </div>
-
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        
-        <img class="modal-content" id="img01">
-        
-        <div id="caption"></div>
-    </div>
-
-
-    <script>
-        // Get the modal element
-        var modal = document.getElementById("myModal");
-
-        // Get the modal image and caption elements
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-
-        // Get all images in the gallery
-        var images = document.querySelectorAll(".gallery img");
-        
-        // Loop over each image and add a click event
-        images.forEach(function(img) {
-            img.onclick = function() {
-                modal.style.display = "flex"; // Changed to flex to use flexbox centering
-                modalImg.src = this.src;       // Set the modal image to the one clicked
-                captionText.innerHTML = this.alt; // Use the alt text for the caption
-            }
-        });
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks on the modal background (not the image), close it
-        modal.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-
-</body>
-</html>
